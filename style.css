@@ -1,0 +1,391 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+html,body,.main-container,.container {
+  scroll-behavior: smooth;
+  /*overflow: hidden;*/
+
+}
+
+/*공통 css*/
+
+.container {
+  /*position: relative;*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.container section {
+  min-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fffee1;
+}
+
+.container section:nth-child(even){
+  background: #000;
+}
+
+.container section .content {
+  max-width: 1000px;
+  padding: 40px;
+  text-align: center;
+}
+
+.container section .content h1{
+  font-size: 10em;
+  color: #111;
+  font-family: 'Playfair Display', serif;
+}
+
+.container section .content h2{
+  font-size: 5em;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.container section .content p {
+  font-size: 1.3em;
+  line-height: 1.4em;
+  color: #111;
+}
+
+.container section .content p.kor {
+  line-height: 1.8em;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 400;
+
+}
+
+.container section .content p.white,
+.container section .content h2.white{
+  color: white;
+}
+
+/*fixed 영역*/
+
+header{
+  position: fixed;
+  /*background-color: black;*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  z-index: 999999;
+  justify-content: center;
+
+}
+
+.header-wrap {
+  width: 1400px;
+  display: flex;
+  justify-content: center;
+  /*background-color: orange;*/
+}
+
+.header-wrap a {
+  padding: 50px;
+}
+
+.header-wrap i {
+  font-size: 2em;
+  color: yellowgreen;
+  opacity: 0.6;
+}
+
+.header-wrap i:hover {
+  opacity: 1;
+}
+
+
+/*footer*/
+
+footer{
+  position: fixed;
+  /*background-color: black;*/
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  z-index: 999999;
+  justify-content: center;
+
+}
+
+.footer-wrap {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  mix-blend-mode: difference;
+}
+
+.footer-wrap span{
+  z-index: 9999;
+  padding: 20px;
+  color: gray;
+  /*mix-blend-mode: difference;*/
+}
+
+
+/*main 영역*/
+
+
+#main .arrow{
+  position: absolute;
+  width: 72px;
+  height: 8px;
+  right: 200px;
+  top: 50%;
+  scale: 150%;
+  margin-top: -4px;
+  animation: move 1s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    right: 200px;
+  }
+
+  50% {
+    right: 180px;
+  }
+
+  100% {
+    right: 200px;
+  }
+
+}
+
+.img-wrap {
+  position: relative;
+}
+
+.img-wrap img {
+  position: absolute;
+  transform-origin: 50%;
+  animation: rotate2 2s linear infinite;
+}
+
+@keyframes rotate2 {
+  0% {
+    rotate: 10deg;
+  }
+
+  50% {
+    rotate: -10deg;
+  }
+
+  100% {
+    rotate: 10deg;
+  }
+
+}
+
+
+
+.img-wrap img:hover {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  100%{
+    transform: rotate(360deg);
+  }
+
+}
+
+.img-wrap img:nth-child(1) {
+  position: absolute;
+  width: 100px;
+  top: 131px;
+  left: -100px;
+}
+
+.img-wrap img:nth-child(2) {
+  position: absolute;
+  width: 200px;
+  top: -565px;
+  left: -290px;
+}
+
+.img-wrap img:nth-child(3) {
+  position: absolute;
+  width: 130px;
+  top: -591px;
+  right: -253px;
+}
+
+.img-wrap img:nth-child(4) {
+  position: absolute;
+  width: 220px;
+  top: 84px;
+  right: -85px;
+}
+
+
+
+
+/*about 영역*/
+
+#about .content {
+  padding-bottom: 90px;
+}
+
+#about .about-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  padding-bottom: 60px;
+}
+
+
+#about .about-img img{
+  width: 200px;
+
+}
+
+#about .about-img .right_img img {
+  width: 120px;
+}
+
+#about .about-img .left_img img {
+  width: 150px;
+}
+
+#about .about-img div:first-child img,
+#about .about-img div:last-child img {
+  width: 100px;
+}
+
+
+
+#about .content .about-img .left_img img,
+#about .content .about-img .right_img img{
+  opacity: 0.2;
+  transition: opacity 0.5s linear;
+}
+
+#about .content .about-img .left_img img:hover,
+#about .content .about-img .right_img img:hover{
+  opacity: 1;
+}
+
+
+
+/*favorite 영역*/
+
+#favorite .content {
+  max-width: 1200px;
+  padding-bottom: 400px;
+}
+
+#favorite .content .hobby-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: auto;
+  height: auto;
+  /*background-color: orange;*/
+  margin-top: 100px;
+}
+
+.hobby-wrap div {
+  width: 250px;
+  height: 250px;
+  /*background-color: hotpink;*/
+
+}
+
+
+@keyframes rotate2 {
+  0% {
+    rotate: 10deg;
+  }
+
+  50% {
+    rotate: -10deg;
+  }
+
+  100% {
+    rotate: 10deg;
+  }
+
+}
+
+.hobby-wrap p {
+ margin-top: 50px;
+  opacity:0;
+  transition: opacity 0.5s linear;
+  /*border: 2px solid yellowgreen;*/
+  background-color: yellowgreen;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.hobby-wrap img:hover + p{
+  opacity: 1;
+}
+
+.small-width {
+  width: 160px;
+  transform-origin: 50%;
+  animation: rotate2 2s linear infinite;
+}
+
+
+/*contact 영역*/
+
+#contact .content{
+  margin-bottom: 100px;
+}
+
+.gif-img{
+  width: 600px;
+  margin-bottom: 60px;
+}
+
+.contact-wrap{
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin: 70px 0;
+}
+
+.contact-wrap i {
+  margin: 0 40px;
+  font-size: 3em;
+  color: white;
+
+}
+
+.contact-wrap i:hover {
+  color: yellowgreen;
+}
+
+
+
+::-webkit-scrollbar{
+  display: none;
+
+}
